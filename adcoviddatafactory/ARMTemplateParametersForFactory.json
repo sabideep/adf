@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adcoviddatafactory"
+		},
+		"ls_sadestination_dl_accountKey": {
+			"value": ""
+		},
+		"ls_source_sa_connectionString": {
+			"value": ""
+		},
+		"ls_http_opendata_ecdc_properties_typeProperties_url": {
+			"value": "https://github.com/"
+		},
+		"ls_sadestination_dl_properties_typeProperties_url": {
+			"value": "https://destinationsaadf.dfs.core.windows.net"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/737d7428-f284-459a-851a-383947ba1b7d/resourceGroups/test/providers/Microsoft.Storage/storageAccounts/adfsourcesa"
+		}
+	}
+}
