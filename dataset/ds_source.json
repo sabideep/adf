@@ -2,11 +2,8 @@
 	"name": "ds_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_test",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"ls_source": "adfsourcesa"
-			}
+			"referenceName": "ls_source_sa",
+			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"ls_blob_source": {
