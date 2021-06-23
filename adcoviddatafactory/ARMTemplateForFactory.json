@@ -312,7 +312,9 @@
 						"store": {
 							"referenceName": "ls_keyvault",
 							"type": "LinkedServiceReference",
-							"parameters": {}
+							"parameters": {
+								"devKeyVault": "https://dev-adf.vault.azure.net/"
+							}
 						},
 						"secretName": "dev-dl-key"
 					}
@@ -393,7 +395,8 @@
 			"properties": {
 				"parameters": {
 					"devKeyVault": {
-						"type": "String"
+						"type": "String",
+						"defaultValue": "https://dev-adf.vault.azure.net/"
 					}
 				},
 				"annotations": [],
