@@ -3,7 +3,8 @@
 	"properties": {
 		"parameters": {
 			"devKeyVault": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "https://dev-adf.vault.azure.net/"
 			}
 		},
 		"annotations": [],
