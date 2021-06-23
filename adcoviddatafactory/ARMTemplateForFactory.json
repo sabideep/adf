@@ -62,8 +62,7 @@
 							"source": {
 								"type": "DelimitedTextSource",
 								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
+									"type": "HttpReadSettings"
 								},
 								"formatSettings": {
 									"type": "DelimitedTextReadSettings"
@@ -98,6 +97,10 @@
 									"relativeUrl": {
 										"value": "@pipeline().parameters.sourceRelativeUrl",
 										"type": "Expression"
+									},
+									"sourceBaseUrl": {
+										"value": "@pipeline().parameters.sourceBaseUrl",
+										"type": "Expression"
 									}
 								}
 							}
@@ -124,7 +127,7 @@
 					"sinkFileName": {
 						"type": "string"
 					},
-					"gitHubUrl": {
+					"sourceBaseUrl": {
 						"type": "string"
 					}
 				},
@@ -144,22 +147,26 @@
 				"linkedServiceName": {
 					"referenceName": "ls_http_opendata_ecdc",
 					"type": "LinkedServiceReference",
-					"parameters": {}
+					"parameters": {
+						"sourceBaseUrl": {
+							"value": "@dataset().sourceBaseUrl",
+							"type": "Expression"
+						}
+					}
 				},
 				"parameters": {
 					"relativeUrl": {
 						"type": "string"
+					},
+					"sourceBaseUrl": {
+						"type": "String"
 					}
 				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
-						"type": "HttpServerLocation",
-						"relativeUrl": {
-							"value": "@dataset().relativeUrl",
-							"type": "Expression"
-						}
+						"type": "HttpServerLocation"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
