@@ -8,9 +8,6 @@
 		"ls_source_sa_connectionString": {
 			"value": ""
 		},
-		"ls_test_connectionString": {
-			"value": ""
-		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"value": "@{linkedService().sourceBaseUrl}"
 		},

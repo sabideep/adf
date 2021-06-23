@@ -11,10 +11,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_source_sa'"
 		},
-		"ls_test_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ls_test'"
-		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().sourceBaseUrl}"
@@ -64,9 +60,6 @@
 					},
 					"ls_source_sa_connectionString": {
 						"value": "[parameters('ls_source_sa_connectionString')]"
-					},
-					"ls_test_connectionString": {
-						"value": "[parameters('ls_test_connectionString')]"
 					},
 					"ls_http_opendata_ecdc_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_properties_typeProperties_url')]"
