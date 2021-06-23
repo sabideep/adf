@@ -85,9 +85,6 @@
 			},
 			"sourceBaseUrl": {
 				"type": "string"
-			},
-			"devKeyVault": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
