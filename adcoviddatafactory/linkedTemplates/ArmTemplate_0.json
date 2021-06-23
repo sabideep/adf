@@ -21,7 +21,7 @@
 		},
 		"ls_keyvault_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://dev-adf.vault.azure.net/"
+			"defaultValue": "@{linkedService().devKeyVault}"
 		},
 		"ls_sadestination_dl_properties_typeProperties_url": {
 			"type": "string",
@@ -96,6 +96,11 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"devKeyVault": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
@@ -192,7 +197,8 @@
 						"type": "AzureKeyVaultSecret",
 						"store": {
 							"referenceName": "ls_keyvault",
-							"type": "LinkedServiceReference"
+							"type": "LinkedServiceReference",
+							"parameters": {}
 						},
 						"secretName": "dev-dl-key"
 					}

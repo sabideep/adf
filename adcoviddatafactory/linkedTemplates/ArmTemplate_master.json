@@ -33,7 +33,7 @@
 		},
 		"ls_keyvault_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://dev-adf.vault.azure.net/"
+			"defaultValue": "@{linkedService().devKeyVault}"
 		},
 		"containerUri": {
 			"type": "string",

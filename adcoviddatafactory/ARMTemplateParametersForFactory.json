@@ -24,7 +24,7 @@
 			"value": "testing.csv"
 		},
 		"ls_keyvault_properties_typeProperties_baseUrl": {
-			"value": "https://dev-adf.vault.azure.net/"
+			"value": "@{linkedService().devKeyVault}"
 		}
 	}
 }
