@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_source_sa'"
 		},
+		"ls_test_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_test'"
+		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://github.com/"
@@ -22,10 +26,6 @@
 		"ls_sadestination_dl_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://destinationsaadf.dfs.core.windows.net"
-		},
-		"trigger1_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/737d7428-f284-459a-851a-383947ba1b7d/resourceGroups/test/providers/Microsoft.Storage/storageAccounts/adfsourcesa"
 		},
 		"containerUri": {
 			"type": "string",
@@ -60,14 +60,14 @@
 					"ls_source_sa_connectionString": {
 						"value": "[parameters('ls_source_sa_connectionString')]"
 					},
+					"ls_test_connectionString": {
+						"value": "[parameters('ls_test_connectionString')]"
+					},
 					"ls_http_opendata_ecdc_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_properties_typeProperties_url')]"
 					},
 					"ls_sadestination_dl_properties_typeProperties_url": {
 						"value": "[parameters('ls_sadestination_dl_properties_typeProperties_url')]"
-					},
-					"trigger1_properties_typeProperties_scope": {
-						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
 					}
 				}
 			},
