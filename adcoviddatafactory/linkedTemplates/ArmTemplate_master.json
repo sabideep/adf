@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adcoviddatafactory"
 		},
-		"ls_sadestination_dl_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ls_sadestination_dl'"
-		},
 		"ls_source_sa_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_source_sa'"
@@ -34,6 +30,10 @@
 		"trigger1_properties_pl_ingest_cases_deaths_data_parameters_sinkFileName": {
 			"type": "string",
 			"defaultValue": "testing.csv"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://dev-adf.vault.azure.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -62,9 +62,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"ls_sadestination_dl_accountKey": {
-						"value": "[parameters('ls_sadestination_dl_accountKey')]"
-					},
 					"ls_source_sa_connectionString": {
 						"value": "[parameters('ls_source_sa_connectionString')]"
 					},
@@ -73,6 +70,9 @@
 					},
 					"ls_http_opendata_ecdc_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_properties_typeProperties_url')]"
+					},
+					"ls_keyvault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_keyvault_properties_typeProperties_baseUrl')]"
 					},
 					"ls_sadestination_dl_properties_typeProperties_url": {
 						"value": "[parameters('ls_sadestination_dl_properties_typeProperties_url')]"

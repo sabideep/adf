@@ -5,9 +5,6 @@
 		"factoryName": {
 			"value": "adcoviddatafactory"
 		},
-		"ls_sadestination_dl_accountKey": {
-			"value": ""
-		},
 		"ls_source_sa_connectionString": {
 			"value": ""
 		},
@@ -25,6 +22,9 @@
 		},
 		"trigger1_properties_pl_ingest_cases_deaths_data_parameters_sinkFileName": {
 			"value": "testing.csv"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://dev-adf.vault.azure.net/"
 		},
 		"containerUri": {
 			"value": ""
