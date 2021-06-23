@@ -3,7 +3,10 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_test",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"ls_source": "adfsourcesa"
+			}
 		},
 		"parameters": {
 			"ls_blob_source": {
