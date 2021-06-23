@@ -21,7 +21,7 @@
 		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://github.com/"
+			"defaultValue": "@{linkedService().abc}"
 		},
 		"ls_sadestination_dl_properties_typeProperties_url": {
 			"type": "string",
@@ -45,6 +45,11 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"abc": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"type": "HttpServer",
 				"typeProperties": {
@@ -110,7 +115,8 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "ls_http_opendata_ecdc",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {}
 				},
 				"parameters": {
 					"relativeUrl": {
@@ -319,6 +325,9 @@
 						"type": "string"
 					},
 					"sinkFileName": {
+						"type": "string"
+					},
+					"gitHubUrl": {
 						"type": "string"
 					}
 				},

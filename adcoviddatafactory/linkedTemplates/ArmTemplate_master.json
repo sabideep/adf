@@ -21,7 +21,7 @@
 		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://github.com/"
+			"defaultValue": "@{linkedService().abc}"
 		},
 		"ls_sadestination_dl_properties_typeProperties_url": {
 			"type": "string",
