@@ -3,10 +3,19 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_http_opendata_ecdc",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"gitHubUrl": {
+					"value": "@dataset().gitHubUrl",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"relativeUrl": {
+				"type": "string"
+			},
+			"gitHubUrl": {
 				"type": "string"
 			}
 		},
