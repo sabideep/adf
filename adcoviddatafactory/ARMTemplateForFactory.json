@@ -444,8 +444,7 @@
 			"properties": {
 				"parameters": {
 					"source": {
-						"type": "String",
-						"defaultValue": "adfsourcesa"
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -484,36 +483,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/pl_copy_data_blob_datalake')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger2')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "pl_ingest_cases_deaths_data",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 15,
-						"startTime": "2021-06-22T22:19:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pl_ingest_cases_deaths_data')]"
 			]
 		}
 	]
