@@ -2,8 +2,13 @@
 	"name": "ds_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_source_sa",
+			"referenceName": "ls_test",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ls_blob_source": {
+				"type": "String"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
