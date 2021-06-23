@@ -5,12 +5,20 @@
 			"referenceName": "ls_http_opendata_ecdc",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"relativeUrl": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "sabideep/covid19/blob/main/ecdc_data/cases_deaths.csv"
+				"relativeUrl": {
+					"value": "@dataset().relativeUrl",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
