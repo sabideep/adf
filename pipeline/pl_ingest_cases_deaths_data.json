@@ -18,8 +18,7 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "HttpReadSettings",
-							"requestMethod": "GET"
+							"type": "HttpReadSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -54,6 +53,10 @@
 							"relativeUrl": {
 								"value": "@pipeline().parameters.sourceRelativeUrl",
 								"type": "Expression"
+							},
+							"sourceBaseUrl": {
+								"value": "@pipeline().parameters.sourceBaseUrl",
+								"type": "Expression"
 							}
 						}
 					}
@@ -80,7 +83,7 @@
 			"sinkFileName": {
 				"type": "string"
 			},
-			"gitHubUrl": {
+			"sourceBaseUrl": {
 				"type": "string"
 			}
 		},
