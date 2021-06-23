@@ -26,6 +26,14 @@
 		"ls_sadestination_dl_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://destinationsaadf.dfs.core.windows.net"
+		},
+		"trigger1_properties_pl_ingest_cases_deaths_data_parameters_sourceRelativeUrl": {
+			"type": "string",
+			"defaultValue": "sabideep/covid19/blob/main/ecdc_data/testing.csv"
+		},
+		"trigger1_properties_pl_ingest_cases_deaths_data_parameters_sinkFileName": {
+			"type": "string",
+			"defaultValue": "testing.csv"
 		}
 	},
 	"variables": {
@@ -320,6 +328,39 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_cases_death_raw_csv_http')]",
 				"[concat(variables('factoryId'), '/datasets/ds_dl_deaths_cases')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_ingest_cases_deaths_data",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"sourceRelativeUrl": "[parameters('trigger1_properties_pl_ingest_cases_deaths_data_parameters_sourceRelativeUrl')]",
+							"sinkFileName": "[parameters('trigger1_properties_pl_ingest_cases_deaths_data_parameters_sinkFileName')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2021-06-23T01:31:00Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_ingest_cases_deaths_data')]"
 			]
 		}
 	]

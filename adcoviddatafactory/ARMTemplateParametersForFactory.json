@@ -19,6 +19,12 @@
 		},
 		"ls_sadestination_dl_properties_typeProperties_url": {
 			"value": "https://destinationsaadf.dfs.core.windows.net"
+		},
+		"trigger1_properties_pl_ingest_cases_deaths_data_parameters_sourceRelativeUrl": {
+			"value": "sabideep/covid19/blob/main/ecdc_data/testing.csv"
+		},
+		"trigger1_properties_pl_ingest_cases_deaths_data_parameters_sinkFileName": {
+			"value": "testing.csv"
 		}
 	}
 }
